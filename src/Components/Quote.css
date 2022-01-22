@@ -1,0 +1,17 @@
+.quote{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    height: 90vh;
+    justify-content: space-around;
+    background-color: #161B22;
+    color: white;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+.quote--img{
+    height: 80%;
+    background-color: #0D1117;
+    width: 65%;
+    margin: 10%;
+}
