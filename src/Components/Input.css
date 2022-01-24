@@ -1,0 +1,21 @@
+.input{
+    min-height: 50vh;
+    color: whitesmoke;
+}
+.input--fields{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.input--fields label{
+    font-size: 24pt;
+    font-weight: 600;
+    margin-bottom: 7.5%;
+}
+.input--fields input{
+    width: 50%;
+    margin-bottom: 7.5%;
+}
+.input--fields button{
+    margin-bottom: 10%;
+}

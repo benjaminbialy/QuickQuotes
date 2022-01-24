@@ -30,7 +30,7 @@ function Quote(props) {
       params: {symbol: props.ticker, interval: '1day', outputsize: '30', format: 'json'},
       headers: {
         'x-rapidapi-host': 'twelve-data1.p.rapidapi.com',
-        'x-rapidapi-key': '9da7aabb33mshcc174d80bb86355p12951ajsn7883b2393c98'
+        'x-rapidapi-key': 'APIKEY'
       }
     };
 
@@ -64,9 +64,8 @@ function Quote(props) {
     <div className='quote'>
       <div className="quote--img"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL + props.company__logo})`,
+          backgroundImage: `url(${props.company__logo__url})`,
           backgroundPosition: 'center',
-          backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat'
       }}> 
       </div>
