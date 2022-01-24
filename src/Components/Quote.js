@@ -21,7 +21,7 @@ function Quote(props) {
       params: {symbol: props.ticker, format: 'json', outputsize: '30'},
       headers: {
         'x-rapidapi-host': 'twelve-data1.p.rapidapi.com',
-        'x-rapidapi-key': ''
+        'x-rapidapi-key': '9da7aabb33mshcc174d80bb86355p12951ajsn7883b2393c98'
       }
     };
     var dailyStats = {
@@ -30,7 +30,7 @@ function Quote(props) {
       params: {symbol: props.ticker, interval: '1day', outputsize: '30', format: 'json'},
       headers: {
         'x-rapidapi-host': 'twelve-data1.p.rapidapi.com',
-        'x-rapidapi-key': ''
+        'x-rapidapi-key': '9da7aabb33mshcc174d80bb86355p12951ajsn7883b2393c98'
       }
     };
 
@@ -60,14 +60,24 @@ function Quote(props) {
 
   return(
     <div className='quote'>
-      <div className="quote--img">
-
+      <div className="quote--img"
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL + props.company__logo})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat'
+      }}> 
       </div>
       <div className='quote--info'>
         <h2>{props.ticker}</h2>
-        <div>open: {open}</div>
-        <div>price: {price}</div>    
-        <div>percentage change: {change}</div>
+        <div className='quote--info--stats'>
+          <div className='open__title'>OPEN:</div>
+          <div className='open__stat'>${open}</div>
+          <div className='current__title'>CURRENT PRICE:</div>
+          <div className='current__stat'>${price}</div>    
+          <div className='percentage__title'>CHANGE:</div> 
+          <div className='percentage__stat'>{change}%</div>
+        </div>
       </div>
     </div>
   );

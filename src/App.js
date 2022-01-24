@@ -6,9 +6,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Quote ticker="TSLA" />
-      <Quote ticker="AMZN" />
-
+      <Quote ticker="TSLA" company__logo="/Tesla_logo.png"/>
+      <Quote ticker="NFLX" company__logo="/netflix-logo.png"/>
+      <Quote ticker="AMZN" company__logo="/amazon-logo.png"/>
     </div>
   );
 }

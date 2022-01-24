@@ -1,7 +1,7 @@
 .quote{
     display: flex;
     flex-direction: column;
-    width: 40vw;
+    width: 450px;
     height: 90vh;
     justify-content: space-around;
     background-color: #161B22;
@@ -11,7 +11,26 @@
 }
 .quote--img{
     height: 80%;
-    background-color: #0D1117;
+    background-color: whitesmoke;
     width: 65%;
     margin: 10%;
+}
+.quote--info h2{
+    margin-top: 0;
+}
+.quote--info{
+    width: 65%;
+    padding-bottom: 10%;
+}
+.quote--info--stats{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.open__stat, .current__stat, .percentage__stat{
+    text-align: end;
+}
+.quote--info--stats div{
+    margin: 5% 0;
+    font-weight: 600;
+    font-size: 12pt;
 }
