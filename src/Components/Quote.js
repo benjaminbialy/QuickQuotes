@@ -36,18 +36,20 @@ function Quote(props) {
 
     const getPrice = () => {
       axios.request(price).then(function (response) {
-        setPrice(response.data.price);
+        setPrice("$" + response.data.price);
       }).catch(function (error) {
         console.error(error);
+        setPrice("Rate limit hit")
       });
     }
     const getDailyStats = () => {
       axios.request(dailyStats).then(function (response) {
-        setChange(response.data.percent_change);
-        setOpen(response.data.open);
+        setChange(response.data.percent_change + "%");
+        setOpen("$" + response.data.open);
       }).catch(function (error) {
         console.error(error);
-      });
+        setChange("Rate limit hit")
+        setOpen("Rate limit hit")      });
     }
 
     getPrice();
@@ -72,11 +74,11 @@ function Quote(props) {
         <h2>{props.ticker}</h2>
         <div className='quote--info--stats'>
           <div className='open__title'>OPEN:</div>
-          <div className='open__stat'>${open}</div>
+          <div className='open__stat'>{open}</div>
           <div className='current__title'>CURRENT PRICE:</div>
-          <div className='current__stat'>${price}</div>    
+          <div className='current__stat'>{price}</div>    
           <div className='percentage__title'>CHANGE:</div> 
-          <div className='percentage__stat'>{change}%</div>
+          <div className='percentage__stat'>{change}</div>
         </div>
       </div>
     </div>
